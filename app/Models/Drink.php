@@ -9,6 +9,10 @@ class Drink extends Model
 {
     use HasFactory;
 
-    //const CREATED_AT = "Letrehozas";
-    const UPDATE_IT = "Frissitve";
+    public function type() {
+        return $this->belongsTo(Type::class);
+    }
+    public function package() {
+        return $this->belongsTo(Package::class);
+    }
 }
